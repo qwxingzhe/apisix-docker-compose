@@ -43,7 +43,7 @@ services:
   apisix-dashboard:
     container_name: apisix-dashboard
     # 由于官方未提供镜像，此处暂使用自建镜像
-    image: registry.cn-shanghai.aliyuncs.com/qwxingzhe/apisix-dashboard:2.0
+    image: registry.cn-shanghai.aliyuncs.com/qwxingzhe/apisix-dashboard:2.1-master-20201210
     ports:
       - 9000:9000
     volumes:
