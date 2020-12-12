@@ -45,7 +45,9 @@ docker-compose ps
 ###### 2.2 浏览器访问 
 > **apisix-dashboard**
 > 访问地址： http://{替换成你的IP地址}:9000
+> 
 > **grafana**
 > 访问地址： http://{替换成你的IP地址}:3000
+> 
 > **prometheus**
 > 访问地址： http://{替换成你的IP地址}:9090
