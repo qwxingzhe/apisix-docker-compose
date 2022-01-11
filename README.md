@@ -10,7 +10,6 @@
 ~~~
 // 下载安装
 git clone https://github.com/qwxingzhe/apisix-docker-compose.git
-cd apisix-docker-compose/simple
 docker-compose up -d
 
 // 查看是否启动成功
@@ -34,8 +33,7 @@ docker-compose ps
 ~~~
 // 下载安装
 git clone https://github.com/qwxingzhe/apisix-docker-compose.git
-cd apisix-docker-compose/senior
-docker-compose up -d
+docker-compose --profile senior up -d
 
 // 查看是否启动成功
 docker-compose ps

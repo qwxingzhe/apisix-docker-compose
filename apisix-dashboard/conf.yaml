@@ -5,7 +5,7 @@ conf:
     port: 9000 # `manager api` listening port
   etcd:
     endpoints: # supports defining multiple etcd host addresses for an etcd cluster
-      - 172.18.5.10:2379
+      - etcd:2379
   log:
     error_log:
       level: warn # supports levels, lower to higher: debug, info, warn, error, panic, fatal
