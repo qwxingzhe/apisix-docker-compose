@@ -1,7 +1,8 @@
-version: "3"
+version: "3.9"
 
 services:
   apisix:
+    container_name: apisix
     image: apache/apisix:2.0-alpine
     # 官网 2.1-alpine 镜像存在ssl无法启动BUG，此处暂用2.0-alpine替代
     #image: apache/apisix:2.1-alpine
@@ -20,9 +21,9 @@ services:
       #- "9443:9443/tcp"
     networks:
       apisix:
-        ipv4_address: 172.18.5.11
 
   etcd:
+    container_name: etcd
     image: bitnami/etcd:3.4.9
     user: root
     restart: always
@@ -38,7 +39,7 @@ services:
       - "2379:2379/tcp"
     networks:
       apisix:
-        ipv4_address: 172.18.5.10
+
 
   apisix-dashboard:
     container_name: apisix-dashboard
@@ -50,11 +51,38 @@ services:
       - ./apisix-dashboard/conf.yaml:/usr/local/apisix-dashboard/conf/conf.yaml
     networks:
       apisix:
-        ipv4_address: 172.18.5.18
+
+
+
+
+  grafana:
+    container_name: grafana
+    image: grafana/grafana:7.3.4
+    profiles:
+      - "senior"
+    ports:
+      - 3000:3000
+    volumes:
+      - ./grafana_data:/var/lib/grafana
+    user: "472"
+    networks:
+      apisix:
+
+
+
+  prometheus:
+    container_name: prometheus
+    image: prom/prometheus
+    profiles:
+      - "senior"
+    ports:
+      - 9090:9090
+    networks:
+      apisix:
+
+
+
 
 networks:
   apisix:
     driver: bridge
-    ipam:
-      config:
-      - subnet: 172.18.0.0/16
