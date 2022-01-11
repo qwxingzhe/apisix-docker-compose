@@ -1,6 +1,22 @@
 
 # apisix-docker-compose
 
+## Prerequisites
+
+- Docker
+
+To install docker run this script
+
+```bash
+bash docker_install.sh
+```
+
+or
+
+```bash
+./docker_install.sh
+```
+
 #### 1.极速开始
 ###### 1.1 安装简洁组合
 - apisix
