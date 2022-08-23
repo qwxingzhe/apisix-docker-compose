@@ -65,3 +65,7 @@ docker-compose ps
 > 
 > **prometheus**
 > 访问地址： http://{替换成你的IP地址}:9090
+
+### Infrastructure model
+
+![Infrastructure model](.infragenie/infrastructure_model.png)
